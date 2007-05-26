@@ -16,6 +16,7 @@ Requires:	gnome-mplayer
 BuildRequires:	mozilla-firefox-devel
 BuildRequires:	dbus-devel
 BuildRequires:	dbus-glib-devel
+BuildRequires:	libx11-devel
 
 %description
 Gecko Media Player is a browser plugin that uses GNOME MPlayer to
