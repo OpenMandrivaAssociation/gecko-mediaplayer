@@ -12,6 +12,7 @@ Source:		http://dekorte.homeip.net/download/gecko-mediaplayer/%name-%version.tar
 Group:		Networking/WWW
 BuildRoot:	%_tmppath/%name-root
 Requires:	gnome-mplayer = %version
+Requires(post,preun):	GConf2
 BuildRequires:	mozilla-firefox-devel
 BuildRequires:	dbus-devel
 BuildRequires:	dbus-glib-devel
@@ -46,8 +47,15 @@ find installed-docs -size 0 | xargs rm
 %clean
 rm -rf %buildroot
 
+%post
+%post_install_gconf_schemas %name
+
+%preun
+%preun_uninstall_gconf_schemas %name
+
 %files -f %name.lang
 %defattr(-,root,root)
 %doc installed-docs/*
+%_sysconfdir/gconf/schemas/%{name}.schemas
 %_libdir/mozilla/plugins/%{name}*.so
 %_libdir/mozilla/plugins/%{name}*.xpt
