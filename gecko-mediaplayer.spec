@@ -1,5 +1,5 @@
 %define name	gecko-mediaplayer
-%define version	0.5.1
+%define version	0.5.2
 %define rel	1
 
 Summary:	GNOME MPlayer browser plugin
