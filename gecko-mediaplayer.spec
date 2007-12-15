@@ -1,5 +1,5 @@
 %define name	gecko-mediaplayer
-%define version	0.5.2
+%define version	0.5.3
 %define rel	1
 
 Summary:	GNOME MPlayer browser plugin
@@ -11,7 +11,7 @@ URL:		http://dekorte.homeip.net/download/gecko-mediaplayer/
 Source:		http://dekorte.homeip.net/download/gecko-mediaplayer/%name-%version.tar.gz
 Group:		Networking/WWW
 BuildRoot:	%_tmppath/%name-root
-Requires:	gnome-mplayer = %version
+Requires:	gnome-mplayer >= 0.5.2
 Requires(post,preun):	GConf2
 BuildRequires:	mozilla-firefox-devel
 BuildRequires:	dbus-devel
