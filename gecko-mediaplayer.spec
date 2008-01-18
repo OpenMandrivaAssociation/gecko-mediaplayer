@@ -1,12 +1,12 @@
 %define name	gecko-mediaplayer
-%define version	0.5.3
+%define version	0.5.4
 %define rel	1
 
 Summary:	GNOME MPlayer browser plugin
 Name:		%name
 Version:	%version
 Release:	%mkrel %rel
-License:	GPLv2
+License:	GPLv2+
 URL:		http://dekorte.homeip.net/download/gecko-mediaplayer/
 Source:		http://dekorte.homeip.net/download/gecko-mediaplayer/%name-%version.tar.gz
 Group:		Networking/WWW
