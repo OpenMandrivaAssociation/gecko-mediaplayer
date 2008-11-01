@@ -1,6 +1,6 @@
 Summary:	GNOME MPlayer browser plugin
 Name:		gecko-mediaplayer
-Version:	0.8.0
+Version:	0.9.0
 Release:	%mkrel 1
 License:	GPLv2+
 URL:		http://kdekorte.googlepages.com/gecko-mediaplayer
