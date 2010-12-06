@@ -1,8 +1,8 @@
 
 Summary:	GNOME MPlayer browser plugin
 Name:		gecko-mediaplayer
-Version:	0.9.9.2
-Release:	%mkrel 2
+Version:	1.0.0
+Release:	%mkrel 1
 License:	GPLv2+
 URL:		http://kdekorte.googlepages.com/gecko-mediaplayer
 Source:		http://gecko-mediaplayer.googlecode.com/files/%name-%version.tar.gz
@@ -26,8 +26,7 @@ Firefox, Opera, etc.).
 %setup -q
 
 %build
-autoreconf -fi
-%configure2_5x
+%configure2_5x --enable-new-libxul
 %make
 
 %install
