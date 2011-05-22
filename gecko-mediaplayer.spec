@@ -8,12 +8,10 @@ URL:		http://kdekorte.googlepages.com/gecko-mediaplayer
 Source:		http://gecko-mediaplayer.googlecode.com/files/%name-%version.tar.gz
 Group:		Networking/WWW
 Requires:	gnome-mplayer >= 0.5.2
-Requires(post,preun):	GConf2
 BuildRequires:	xulrunner-devel
 BuildRequires:	dbus-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	libx11-devel
-BuildRequires:	libGConf2-devel
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -46,14 +44,7 @@ rm -f %{buildroot}%{_libdir}/mozilla/plugins/%{name}*.la
 %clean
 rm -rf %{buildroot}
 
-%post
-%post_install_gconf_schemas %{name}
-
-%preun
-%preun_uninstall_gconf_schemas %{name}
-
 %files -f %{name}.lang
 %defattr(-,root,root)
 %doc installed-docs/*
-%{_sysconfdir}/gconf/schemas/%{name}.schemas
 %{_libdir}/mozilla/plugins/%{name}*.so
