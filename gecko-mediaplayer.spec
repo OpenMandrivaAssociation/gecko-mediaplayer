@@ -11,7 +11,8 @@ Requires:	gnome-mplayer >= 0.5.2
 BuildRequires:	xulrunner-devel
 BuildRequires:	dbus-devel
 BuildRequires:	dbus-glib-devel
-BuildRequires:	libx11-devel
+BuildRequires:	pkgconfig(x11)
+BuildRequires:	pkgconfig(gmlib)
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
