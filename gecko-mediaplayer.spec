@@ -17,6 +17,7 @@ BuildRequires:	dbus-glib-devel
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(gmlib)
 BuildRequires:  pkgconfig(nspr)
+BuildRequires:	pkgconfig(gconf-2.0)
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
