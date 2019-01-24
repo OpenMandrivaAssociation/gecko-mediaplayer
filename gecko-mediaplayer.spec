@@ -6,6 +6,9 @@ Release:	1
 License:	GPLv2+
 URL:		http://kdekorte.googlepages.com/gecko-mediaplayer
 Source:		http://gecko-mediaplayer.googlecode.com/files/%name-%version.tar.gz
+Patch0:		gecko-mediaplayer-1.0.8-no-xpcom.patch
+Patch1:		gecko-mediaplayer-1.0.9-np-loadds.patch
+Patch2:		gecko-mediaplayer-1.0.9-libxul.patch
 Group:		Networking/WWW
 Requires:	gnome-mplayer >= 0.5.2
 #BuildRequires:	xulrunner-devel
