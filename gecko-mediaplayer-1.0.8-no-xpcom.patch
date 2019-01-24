@@ -1,0 +1,24 @@
+--- gecko-mediaplayer-1.0.8/configure.in.0000	2013-03-01 22:01:24.000000000 +0000
++++ gecko-mediaplayer-1.0.8/configure.in	2014-01-10 10:01:43.628662543 +0000
+@@ -68,8 +68,9 @@
+ fi
+ 
+ if test "$GECKO_CFLAGS" = ""; then
+-PKG_CHECK_MODULES(GECKO, [mozilla-plugin mozilla-xpcom],[ AC_MSG_NOTICE([Using mozilla])
++PKG_CHECK_MODULES(GECKO, [mozilla-plugin],[ AC_MSG_NOTICE([Using mozilla])
+     ],[AC_MSG_WARN([mozilla-plugin not found, trying another])])
++    require_nspr="yes"
+ fi
+ 
+ if test "$GECKO_CFLAGS" = ""; then
+--- gecko-mediaplayer-1.0.8/src/plugin.cpp~	2013-01-14 13:43:49.000000000 +0000
++++ gecko-mediaplayer-1.0.8/src/plugin.cpp	2014-01-10 10:03:23.241022241 +0000
+@@ -44,7 +44,7 @@
+ #include "plugin_dbus.h"
+ 
+ #ifdef HAVE_NSPR
+-#include <nspr/nspr.h>
++#include <nspr.h>
+ #else
+ #include <nsIPrefBranch.h>
+ #include <nsIPrefService.h>
