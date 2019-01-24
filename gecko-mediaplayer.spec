@@ -8,11 +8,12 @@ URL:		http://kdekorte.googlepages.com/gecko-mediaplayer
 Source:		http://gecko-mediaplayer.googlecode.com/files/%name-%version.tar.gz
 Group:		Networking/WWW
 Requires:	gnome-mplayer >= 0.5.2
-BuildRequires:	xulrunner-devel
+#BuildRequires:	xulrunner-devel
 BuildRequires:	dbus-devel
 BuildRequires:	dbus-glib-devel
 BuildRequires:	pkgconfig(x11)
 BuildRequires:	pkgconfig(gmlib)
+BuildRequires:  pkgconfig(nspr)
 BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
@@ -23,14 +24,17 @@ Firefox, Opera, etc.).
 
 %prep
 %setup -q
+%autopatch -p1
 
 %build
-%configure2_5x --enable-new-libxul
-%make
+autoreconf -fi
+
+export CPPFLAGS="-DNPAPI_USE_CONSTCHARS"
+%configure2_5x
+%make_build
 
 %install
-rm -rf %{buildroot}
-%makeinstall_std
+%make_install
 
 mv %{buildroot}%{_docdir}/%{name} installed-docs
 rm installed-docs/{INSTALL,COPYING}
@@ -42,10 +46,6 @@ find installed-docs -size 0 | xargs rm
 
 rm -f %{buildroot}%{_libdir}/mozilla/plugins/%{name}*.la
 
-%clean
-rm -rf %{buildroot}
-
 %files -f %{name}.lang
-%defattr(-,root,root)
 %doc installed-docs/*
 %{_libdir}/mozilla/plugins/%{name}*.so
