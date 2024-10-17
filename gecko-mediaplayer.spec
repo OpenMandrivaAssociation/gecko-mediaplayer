@@ -4,7 +4,7 @@ Name:		gecko-mediaplayer
 Version:	1.0.7
 Release:	2
 License:	GPLv2+
-URL:		http://kdekorte.googlepages.com/gecko-mediaplayer
+URL:		https://kdekorte.googlepages.com/gecko-mediaplayer
 Source:		http://gecko-mediaplayer.googlecode.com/files/%name-%version.tar.gz
 Group:		Networking/WWW
 Requires:	gnome-mplayer >= 0.5.2
